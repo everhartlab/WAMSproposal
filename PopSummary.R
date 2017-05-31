@@ -12,8 +12,13 @@ pops$percentage <- 100*pops$pop/(sum(pops$pop))
 ##  RFA limits the small towns to being 50,000 or less
 ## Proposed start date of September 30th
 
-tot <- sum(pops$pop)  #197 towns total
+tot <- sum(pops$pop)  #these are the number of people that live in cities and villages
+all <- 1826341  # total number of people who live in Nebraska
+
 sum(pops$pop > 50000) # 3 are >50,000
+sum(pops$pop[pops$pop > 50000])/all
+(sum(pops$pop[pops$pop < 50000]) + (all-tot))/all
+
 
 sum(pops$pop < 50000) # 194 are <50,000
 
